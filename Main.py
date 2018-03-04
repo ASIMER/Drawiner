@@ -18,8 +18,14 @@ class DrawinerApp(App):
 	def build(self):
 		self.game = Game()
 		self.keyboard = Keyboard()
+		self.settings = Settings()
 		Clock.schedule_interval(self.update, 1.0/60.0)
 		return self.game
 	def update(self, dt):
+		for key in self.keyboard.key_set:
+			if (key == self.settings.keys["Move"]["move_up"]):
+				print("move_up test")
+			elif (key == self.settings.keys["Additional"]["Move"]["move_up"]):
+				print("move_up test addit")
 		self.keyboard.key_set.clear()
 DrawinerApp().run()
