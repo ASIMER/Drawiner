@@ -1,42 +1,48 @@
 #:kivy 1.10.0
+#:import Ship Ship.Ship
+#:import Window kivy.core.window
 <Game>:
 	skybox_1: skybox_1
 	skybox_2: skybox_2
 	skybox_3: skybox_3
 	skybox_4: skybox_4
+	coords_label: coords_label
+	ship: ship_id
 	Image:
 		id: skybox_1
 		source: 'img/skybox1.jpg'
-		center_y: 763/2 + root.height/2 
-		center_x: 800 + root.width/2
+		center_y: 763/2 + root.height/2 + ship_id.coord_y
+		center_x: 800 + root.width/2 + ship_id.coord_x
 		size: 1600, 763
 	Image:
 		id: skybox_2
 		source: 'img/skybox2.jpg'
-		center_y: 763/2 + root.height/2 
-		center_x: -800 + root.width/2
+		center_y: 763/2 + root.height/2 + ship_id.coord_y
+		center_x: -800 + root.width/2 + ship_id.coord_x
 		size: 1600, 763
 	Image:
 		id: skybox_3
 		source: 'img/skybox3.jpg'
-		center_y: -763/2 + root.height/2 
-		center_x: -800 + root.width/2
+		center_y: -763/2 + root.height/2 + ship_id.coord_y
+		center_x: -800 + root.width/2 + ship_id.coord_x
 		size: 1600, 763
 	Image:
 		id: skybox_4
 		source: 'img/skybox4.jpg'
-		center_y: -763/2 + root.height/2 
-		center_x: 800 + root.width/2
+		center_y: -763/2 + root.height/2 + ship_id.coord_y
+		center_x: 800 + root.width/2 + ship_id.coord_x
 		size: 1600, 763
 	Label:
+		id: coords_label
 		font_size: 70
 		top: root.top - 50
-		center_x: root.width / 4
-		text: "0"
-	Label:
-		font_size: 70
-		top: root.top - 50
-		center_x: root.width * 3 / 4
-		text: "0"
+		center_x: root.width / 2
+		text: str(ship_id.coords[0]) + "; " + str(ship_id.coords[1])
 	Ship:
+		angle: 0
+		id: ship_id
 		pos: self.parent.center_x - 50, self.parent.center_y - 50
+		canvas.before:
+			Rotate:
+				angle: 90 + self.angle
+				origin: self.center

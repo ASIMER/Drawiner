@@ -5,25 +5,14 @@ class Settings(Widget):
 	"""This class planned to visualize settings as widget
 	which contains buttons and key-binding"""
 	keys = {"Move": {
-				"move_up": "w",
-				"move_down": "s",
-				"move_left": "a",
-				"move_right": "d"
+				"move_up": ("w", "up"),
+				"move_down": ("s", "down"),
+				"move_left": ("a", "left"),
+				"move_right": ("d", "right")
 				},
 			"Combat": {
-				"fire": "space"
-				},
-			"Additional": {
-				"Move": {
-					"move_up": "up",
-					"move_down": "down",
-					"move_left": "left",
-					"move_right": "right"
-					}
-				},
-				"Combat": {
-					"fire": ""
-					},
+				"fire": "spacebar"
+				}
 			}
 	def __init__(self):
 		super(Settings, self).__init__()

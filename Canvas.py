@@ -10,8 +10,11 @@ class Game(Widget):
 	skybox_2 = ObjectProperty(None)
 	skybox_3 = ObjectProperty(None)
 	skybox_4 = ObjectProperty(None)
+	ship = ObjectProperty(None)
 	skybox_pos_x = NumericProperty(0)
 	skybox_pos_y = NumericProperty(0)
 	skybox_pos = ReferenceListProperty(skybox_pos_x, skybox_pos_y)
+	print(ship)
+
 	def move(self):
 		return
