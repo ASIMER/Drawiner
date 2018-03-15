@@ -26,27 +26,18 @@ class DrawinerApp(App):
 		return self.game
 	def update(self, dt):
 		self.game.ship.angle = (Vector(Window.mouse_pos)-Vector(Window.width/2, Window.height/2)).angle(Vector(1,0))
-		print(self.game.ship.angle)
-		if (len(self.keyboard.key_set)!=0): print(self.keyboard.key_set)
 		for key in self.keyboard.key_set:
 			if (key in self.settings.keys["Move"]["move_up"]):
-				print("move_up test")
-				self.game.ship.coord_y += 1
-			elif (key in self.settings.keys["Move"]["move_down"]):
-				print("move_down test")
 				self.game.ship.coord_y -= 1
+			elif (key in self.settings.keys["Move"]["move_down"]):
+				self.game.ship.coord_y += 1
 			elif (key in self.settings.keys["Move"]["move_left"]):
-				print("move_left test")
-				self.game.ship.coord_x -= 1
-			elif (key in self.settings.keys["Move"]["move_right"]):
-				print("move_right test")
 				self.game.ship.coord_x += 1
+			elif (key in self.settings.keys["Move"]["move_right"]):
+				self.game.ship.coord_x -= 1
 			elif (key in self.settings.keys["Combat"]["fire"]):
-				print(Window.width)
-				print(self.game.coords_label.text)
-				print(self.game.ship.coords)
+				return
 		if (len(self.keyboard.del_key_set) != 0):
-			print(self.keyboard.del_key_set)
 			self.keyboard.key_set -= self.keyboard.del_key_set
 			self.keyboard.del_key_set.clear()
 DrawinerApp().run()

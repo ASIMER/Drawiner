@@ -14,10 +14,8 @@ class Keyboard(Widget):
 		self._keyboard.bind(on_key_up = self.key_up)
 		#Window.bind(on_keyboard = self.input)
 	def input(self, keyboard_obj, key, text, modifier):
-		print(key[1])
 		self.key_set.add(key[1])
 	def key_up(self, keyboard_obj, key):
-		print(key[1])
 		self.del_key_set.add(key[1])
 	def close_keyboard(self):
 		Window.unbind(on_keyboard = self.get_key)

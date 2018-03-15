@@ -9,4 +9,4 @@ class Mouse(Widget):
 		Window.bind(on_cursor_enter = self.on_touch_move_test)
 		"""Мой юный дцпшник, импут_тайп нужен что бы на яблофоне выбрать нужную клаву"""
 	def on_touch_move_test (self, touch_obj):
-		print(touch_obj)
+		return

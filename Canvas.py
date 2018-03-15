@@ -15,6 +15,8 @@ class Game(Widget):
 	skybox_pos_y = NumericProperty(0)
 	skybox_pos = ReferenceListProperty(skybox_pos_x, skybox_pos_y)
 	print(ship)
-
-	def move(self):
-		return
+	def build(self):
+		self.ship.bind(on_coords = self.move)
+	def move(self, instance, value):
+		print(instance)
+		print(value)
