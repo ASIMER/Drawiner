@@ -16,7 +16,6 @@ from Asteroid import *
 from Ai import *
 
 class DrawinerApp(App):
-	angle = 0
 	def build(self):
 		self.game = Game()
 		self.keyboard = Keyboard()
@@ -25,18 +24,30 @@ class DrawinerApp(App):
 		Clock.schedule_interval(self.update, 1.0/60.0)
 		return self.game
 	def update(self, dt):
+		print(self.settings.FA)
+		self.game.move()
+		self.game.ship.move()
 		self.game.ship.angle = (Vector(Window.mouse_pos)-Vector(Window.width/2, Window.height/2)).angle(Vector(1,0))
 		for key in self.keyboard.key_set:
 			if (key in self.settings.keys["Move"]["move_up"]):
-				self.game.ship.coord_y -= 1
+				self.game.ship.thrust("forward_t")
 			elif (key in self.settings.keys["Move"]["move_down"]):
-				self.game.ship.coord_y += 1
+				self.game.ship.thrust("backward_t")
 			elif (key in self.settings.keys["Move"]["move_left"]):
-				self.game.ship.coord_x += 1
+				self.game.ship.thrust("left_t")
 			elif (key in self.settings.keys["Move"]["move_right"]):
-				self.game.ship.coord_x -= 1
+				self.game.ship.thrust("right_t")
 			elif (key in self.settings.keys["Combat"]["fire"]):
 				return
+			elif (key in self.settings.keys["Utils"]["FA"] and not self.settings.keys["Utils"]["FA"][1]):
+				self.settings.FA = not self.settings.FA
+				self.settings.keys["Utils"]["FA"][1] = True
+		#For trigers:
+		if (not (self.settings.keys["Utils"]["FA"][0] in self.keyboard.key_set)):
+			self.settings.keys["Utils"]["FA"][1] = False
+		#------------
+		if (self.settings.FA and len(self.keyboard.key_set)==0):
+			self.game.ship.flight_assist()
 		if (len(self.keyboard.del_key_set) != 0):
 			self.keyboard.key_set -= self.keyboard.del_key_set
 			self.keyboard.del_key_set.clear()

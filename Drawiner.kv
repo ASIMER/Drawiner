@@ -11,33 +11,33 @@
 	Image:
 		id: skybox_1
 		source: 'img/skybox1.jpg'
-		center_y: 763/2 + root.height/2 + ship_id.coord_y
-		center_x: 800 + root.width/2 + ship_id.coord_x
+		center_y: 763/2 + root.height/2 - ship_id.coords.y
+		center_x: 800 + root.width/2 - ship_id.coords.x
 		size: 1600, 763
 	Image:
 		id: skybox_2
 		source: 'img/skybox2.jpg'
-		center_y: 763/2 + root.height/2 + ship_id.coord_y
-		center_x: -800 + root.width/2 + ship_id.coord_x
+		center_y: 763/2 + root.height/2 - ship_id.coords.y
+		center_x: -800 + root.width/2 - ship_id.coords.x
 		size: 1600, 763
 	Image:
 		id: skybox_3
 		source: 'img/skybox3.jpg'
-		center_y: -763/2 + root.height/2 + ship_id.coord_y
-		center_x: -800 + root.width/2 + ship_id.coord_x
+		center_y: -763/2 + root.height/2 - ship_id.coords.y
+		center_x: -800 + root.width/2 - ship_id.coords.x
 		size: 1600, 763
 	Image:
 		id: skybox_4
 		source: 'img/skybox4.jpg'
-		center_y: -763/2 + root.height/2 + ship_id.coord_y
-		center_x: 800 + root.width/2 + ship_id.coord_x
+		center_y: -763/2 + root.height/2 - ship_id.coords.y
+		center_x: 800 + root.width/2 - ship_id.coords.x
 		size: 1600, 763
 	Label:
 		id: coords_label
 		font_size: 70
 		top: root.top - 50
 		center_x: root.width / 2
-		text: str(ship_id.coords[0]) + "; " + str(ship_id.coords[1])
+		text: str(round(ship_id.coords.x, 3)) + "; " + str(round(ship_id.coords.y, 3))
 	Ship:
 		angle: 0
 		id: ship_id
