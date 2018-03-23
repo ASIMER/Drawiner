@@ -3,9 +3,8 @@ kivy.require("1.10.0")
 from kivy.app import App
 from kivy.uix.widget import Widget
 from kivy.uix.image import Image
-from kivy.properties import *
+from kivy.properties import ObjectProperty
 from kivy.vector import Vector
-from Settings import *
 class Ship(Image):
 	hp = 0
 	mp = 0
@@ -13,7 +12,7 @@ class Ship(Image):
 	ammo = 0
 	boost = (0, "type")
 	heat = {
-		#(heat value, overheat, thruster down timer)
+		#(heat value, overheat(planned), thruster down timer(planned))
 		"forward_t": [0, 0, 0],
 		"backward_t": [0, 0, 0],
 		"left_t": [0, 0, 0],
@@ -27,8 +26,9 @@ class Ship(Image):
 	def flight_assist(self):
 		#if must check value higher then norm vect multiply value, to prevent loop
 		if (self.velocity.length() > 0.06):
-			print((self.velocity.normalize()).rotate(180))
-			self.velocity = self.velocity + (self.velocity.normalize()).rotate(180) * 0.05
+			self.velocity = (self.velocity 
+							+ self.velocity.normalize().rotate(180) 
+							* 0.05)
 		else:
 			self.velocity = Vector(0, 0)
 	def overheat(self, heat_type):
@@ -37,19 +37,26 @@ class Ship(Image):
 			self.heat[heat_type][0] = 1
 	def thrust(self, direction):
 		if (direction == "forward_t"):
-			self.velocity = self.velocity + Vector(0.1, 0).rotate(self.angle) * self.heat[direction][0]
+			self.velocity = (self.velocity 
+							+ Vector(0.1, 0).rotate(self.angle) 
+							* self.heat[direction][0])
 			self.overheat(direction)
 		elif (direction == "backward_t"):
-			self.velocity = self.velocity + Vector(0.05, 0).rotate(self.angle+180) * self.heat[direction][0]
+			self.velocity = (self.velocity
+							+ Vector(0.05, 0).rotate(self.angle+180) 
+							* self.heat[direction][0])
 			self.overheat(direction)
 		elif (direction == "left_t"):
-			self.velocity = self.velocity + Vector(0.03, 0).rotate(self.angle+90) * self.heat[direction][0]
+			self.velocity = (self.velocity
+							+ Vector(0.03, 0).rotate(self.angle+90)
+							* self.heat[direction][0])
 			self.overheat(direction)
 		elif (direction == "right_t"):
-			self.velocity = self.velocity + Vector(0.03, 0).rotate(self.angle+270) * self.heat[direction][0]
+			self.velocity = (self.velocity
+							+ Vector(0.03, 0).rotate(self.angle+270)
+							* self.heat[direction][0])
 			self.overheat(direction)
 	def move(self):
-		print(self.heat["forward_t"][0])
 		self.coords = self.coords + self.velocity
 		for htype in self.heat:
 			if (self.heat[htype][0] > 0):

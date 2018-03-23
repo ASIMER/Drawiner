@@ -1,7 +1,6 @@
 import kivy
 kivy.require("1.10.0")
-from kivy.uix.widget import Widget
-class Settings(Widget):
+class Settings():
 	"""This class planned to visualize settings as widget
 	which contains buttons and key-binding"""
 	FA = False
