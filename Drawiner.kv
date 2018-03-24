@@ -10,27 +10,27 @@
 	Image:
 		id: skybox_1
 		source: 'img/skybox1.jpg'
-		center_y: 763/2 + root.height/2 - ship_id.coords.y
-		center_x: 800 + root.width/2 - ship_id.coords.x
-		size: 1600, 763
+		center_x: self.size[0] / 2 + root.width / 2 - ship_id.coords.x
+		center_y: self.size[1] / 2 + root.height / 2 - ship_id.coords.y
+		size: self.texture_size[0], self.texture_size[1]
 	Image:
 		id: skybox_2
 		source: 'img/skybox2.jpg'
-		center_y: 763/2 + root.height/2 - ship_id.coords.y
-		center_x: -800 + root.width/2 - ship_id.coords.x
-		size: 1600, 763
+		center_x: -self.size[0] / 2 + root.width/2 - ship_id.coords.x
+		center_y: self.size[1] / 2 + root.height/2 - ship_id.coords.y
+		size: self.texture_size[0], self.texture_size[1]
 	Image:
 		id: skybox_3
 		source: 'img/skybox3.jpg'
-		center_y: -763/2 + root.height/2 - ship_id.coords.y
-		center_x: -800 + root.width/2 - ship_id.coords.x
-		size: 1600, 763
+		center_x: -self.size[0] / 2 + root.width/2 - ship_id.coords.x
+		center_y: -self.size[1] / 2 + root.height/2 - ship_id.coords.y
+		size: self.texture_size[0], self.texture_size[1]
 	Image:
 		id: skybox_4
 		source: 'img/skybox4.jpg'
-		center_y: -763/2 + root.height/2 - ship_id.coords.y
-		center_x: 800 + root.width/2 - ship_id.coords.x
-		size: 1600, 763
+		center_x: self.size[0] / 2 + root.width/2 - ship_id.coords.x
+		center_y: -self.size[1] /2 + root.height/2 - ship_id.coords.y
+		size: self.texture_size[0], self.texture_size[1]
 	Label:
 		id: coords_label
 		font_size: 70
