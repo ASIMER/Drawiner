@@ -12,6 +12,8 @@ class Game(Widget):
 	skybox_3 = ObjectProperty(None)
 	skybox_4 = ObjectProperty(None)
 	ship = ObjectProperty(None)
+	skyboxes = []
+	last_quarter = None
 	def build(self):
 		self.ship.bind(on_coords = self.move)
 	def get_main_sky(self, finded, *args):
@@ -36,20 +38,58 @@ class Game(Widget):
 		else:
 			return 1
 	def move(self):
+		if len(self.skyboxes) == 0:
+			self.skyboxes = [self.skybox_1, self.skybox_2, self.skybox_3, self.skybox_4]
 		main_sky = self.get_main_sky(self.ship, self.skybox_1, 
 									self.skybox_2, self.skybox_3, 
 									self.skybox_4)
+		self.skyboxes.remove(main_sky)
 		quarter = self.get_quarter(main_sky, self.ship)
-		"""
-		if quarter == 1:
-			for i in [skybox_1, skybox_2, skybox_3, skybox_4]:
-				if i == main_sky:
-					break
-				else:
+		if quarter != self.last_quarter:
+			if quarter == 1:
+				self.skyboxes[0].coords.x = main_sky.coords.x
+				self.skyboxes[0].coords.y = main_sky.coords.y + main_sky.size[1]
 
-		elif quarter == 2:
+				self.skyboxes[1].coords.x = main_sky.coords.x + main_sky.size[0]
+				self.skyboxes[1].coords.y = main_sky.coords.y + main_sky.size[1]
+				
+				self.skyboxes[2].coords.x = main_sky.coords.x + main_sky.size[0]
+				self.skyboxes[2].coords.y = main_sky.coords.y
+
+			elif quarter == 2:
+				self.skyboxes[0].coords.x = main_sky.coords.x - main_sky.size[0]
+				self.skyboxes[0].coords.y = main_sky.coords.y
+
+				self.skyboxes[1].coords.x = main_sky.coords.x - main_sky.size[0]
+				self.skyboxes[1].coords.y = main_sky.coords.y + main_sky.size[1]
+				
+				self.skyboxes[2].coords.x = main_sky.coords.x
+				self.skyboxes[2].coords.y = main_sky.coords.y + main_sky.size[1]
+
+			elif quarter == 3:
+				self.skyboxes[0].coords.x = main_sky.coords.x - main_sky.size[0]
+				self.skyboxes[0].coords.y = main_sky.coords.y
+
+				self.skyboxes[1].coords.x = main_sky.coords.x - main_sky.size[0]
+				self.skyboxes[1].coords.y = main_sky.coords.y - main_sky.size[1]
+				
+				self.skyboxes[2].coords.x = main_sky.coords.x
+				self.skyboxes[2].coords.y = main_sky.coords.y - main_sky.size[1]
+
+			else:
+				self.skyboxes[0].coords.x = main_sky.coords.x 
+				self.skyboxes[0].coords.y = main_sky.coords.y - main_sky.size[1]
+
+				self.skyboxes[1].coords.x = main_sky.coords.x + main_sky.size[0]
+				self.skyboxes[1].coords.y = main_sky.coords.y - main_sky.size[1]
+				
+				self.skyboxes[2].coords.x = main_sky.coords.x + main_sky.size[0]
+				self.skyboxes[2].coords.y = main_sky.coords.y
+		self.skyboxes.append(main_sky)
+		self.last_quarter = quarter
 		"""
 
 		#elif():
 		#print(self.skybox_4.pos)
 		#print(self.skybox_4.size)
+		"""

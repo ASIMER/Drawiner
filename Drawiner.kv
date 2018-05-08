@@ -1,5 +1,7 @@
 #:kivy 1.10.0
+#:import MovableObject MovableObject.MovableObject
 #:import Ship Ship.Ship
+#:import Vector kivy.vector.Vector
 <Game>:
 	skybox_1: skybox_1
 	skybox_2: skybox_2
@@ -7,29 +9,29 @@
 	skybox_4: skybox_4
 	coords_label: coords_label
 	ship: ship_id
-	Image:
+	MovableObject:
+		coords: Vector(root.width / 2 - self.size[0], root.height / 2 - self.size[1])
 		id: skybox_1
-		source: 'img/skybox1.jpg'
-		center_x: self.size[0] / 2 + root.width / 2 - ship_id.coords.x
-		center_y: self.size[1] / 2 + root.height / 2 - ship_id.coords.y
+		source: 'img/skybox.jpg'
+		pos: self.coords.x - ship_id.coords.x, self.coords.y - ship_id.coords.y
 		size: self.texture_size[0], self.texture_size[1]
-	Image:
+	MovableObject:
+		coords: Vector(root.width / 2, root.height / 2 - self.size[1])
 		id: skybox_2
-		source: 'img/skybox2.jpg'
-		center_x: -self.size[0] / 2 + root.width/2 - ship_id.coords.x
-		center_y: self.size[1] / 2 + root.height/2 - ship_id.coords.y
+		source: 'img/skybox.jpg'
+		pos: self.coords.x - ship_id.coords.x, self.coords.y - ship_id.coords.y
 		size: self.texture_size[0], self.texture_size[1]
-	Image:
+	MovableObject:
+		coords: Vector(root.width / 2 - self.size[0], root.height / 2)
 		id: skybox_3
-		source: 'img/skybox3.jpg'
-		center_x: -self.size[0] / 2 + root.width/2 - ship_id.coords.x
-		center_y: -self.size[1] / 2 + root.height/2 - ship_id.coords.y
+		source: 'img/skybox.jpg'
+		pos: self.coords.x - ship_id.coords.x, self.coords.y - ship_id.coords.y
 		size: self.texture_size[0], self.texture_size[1]
-	Image:
+	MovableObject:
+		coords: Vector(root.width / 2, root.height / 2)
 		id: skybox_4
-		source: 'img/skybox4.jpg'
-		center_x: self.size[0] / 2 + root.width/2 - ship_id.coords.x
-		center_y: -self.size[1] /2 + root.height/2 - ship_id.coords.y
+		source: 'img/skybox.jpg'
+		pos: self.coords.x - ship_id.coords.x, self.coords.y - ship_id.coords.y
 		size: self.texture_size[0], self.texture_size[1]
 	Label:
 		id: coords_label

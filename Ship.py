@@ -2,10 +2,10 @@ import kivy
 kivy.require("1.10.0")
 from kivy.app import App
 from kivy.uix.widget import Widget
-from kivy.uix.image import Image
+from MovableObject import MovableObject
 from kivy.properties import ObjectProperty
 from kivy.vector import Vector
-class Ship(Image):
+class Ship(MovableObject):
 	hp = 0
 	mp = 0
 	xp = 0
@@ -21,8 +21,6 @@ class Ship(Image):
 		}
 	#inventory = Inventory()
 	source = 'img/usership.png'
-	coords = ObjectProperty(Vector(0, 0), True)
-	velocity = ObjectProperty(Vector(0, 0), True)
 	def flight_assist(self):
 		#if must check value higher then norm vect multiply value, to prevent loop
 		if (self.velocity.length() > 0.06):
