@@ -2,6 +2,7 @@
 #:import MovableObject MovableObject.MovableObject
 #:import Ship Ship.Ship
 #:import Vector kivy.vector.Vector
+#:import Window kivy.core.window.Window
 <Game>:
 	skybox_1: skybox_1
 	skybox_2: skybox_2
@@ -44,9 +45,12 @@
 		id: ship_id
 		pos: self.parent.center_x - 50, self.parent.center_y - 50
 		canvas.before:
+			PushMatrix
 			Rotate:
 				angle: 90 + self.angle
 				origin: self.center
+		canvas.after:
+			PopMatrix
 		Image:
 			angle: 0
 			id: flare_b
@@ -67,3 +71,13 @@
 				Rotate:
 					angle: self.angle
 					origin: self.center
+<Bullet>:
+	size: self.texture_size[0]*0.2, self.texture_size[1]*0.2
+	pos: Window.width/2 + self.coords.x - self.size[0]/2 - self.shooter.coords.x, Window.height/2 + self.coords.y - self.size[1]/2 - self.shooter.coords.y
+	canvas.before:
+		PushMatrix
+		Rotate:
+			angle: self.angle
+			origin: self.center
+	canvas.after:
+		PopMatrix

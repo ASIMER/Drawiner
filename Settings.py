@@ -12,11 +12,11 @@ class Settings():
 			"move_right": ("d", "right")
 			},
 		"Combat": {
-			"fire": "spacebar"
+			"fire": ("spacebar", "mouse left")
 			},
 		"Utils": {
 			"FA": ["z", False]
-			}
+			},
 		}
 	#PLANNED FEATURES	
 	difficulty = {
