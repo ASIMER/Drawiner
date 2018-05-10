@@ -10,17 +10,9 @@ from Keyboard import Keyboard
 from Mouse import Mouse
 from Canvas import Game
 from Settings import Settings
-from Bullet import Bullet
 
 class DrawinerApp(App):
 	bullets = []
-	cooldown = {
-		"bullet": 0,
-		}
-	def cooling(self, cooldown_list, speed):
-		for cooldown_type in cooldown_list:
-			if cooldown_list[cooldown_type] > 0:
-				cooldown_list[cooldown_type] = round(cooldown_list[cooldown_type] - 0.1, 1)
 	def build(self):
 		self.game = Game()
 		self.keyboard = Keyboard()
@@ -30,9 +22,9 @@ class DrawinerApp(App):
 		Clock.schedule_interval(self.update, 1.0/60.0)
 		return self.game
 	def update(self, dt):
-		self.cooling(self.cooldown, 0.1)
 		self.game.move()
 		self.game.ship.move()
+		self.game.ship.cooling(0.1)
 		self.game.ship.angle = (Vector(Window.mouse_pos) - 
 								Vector(Window.width / 2, Window.height / 2)
 								).angle(Vector(1,0))
@@ -47,12 +39,7 @@ class DrawinerApp(App):
 				self.game.ship.thrust("right_t")
 			elif (key in self.settings.keys["Combat"]["fire"]):
 				#latter there will be bullet type
-				print(self.cooldown["bullet"])
-				if self.cooldown["bullet"] == 0:
-					bullet = Bullet("bullet", self.game.ship)
-					self.bullets += [bullet]
-					self.game.add_widget(bullet)
-					self.cooldown["bullet"] = 1
+				self.game.ship.fire()
 			elif (key in self.settings.keys["Utils"]["FA"] and
 				 	not self.settings.keys["Utils"]["FA"][1]
 				 ):

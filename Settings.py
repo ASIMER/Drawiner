@@ -30,5 +30,20 @@ class Settings():
 				}
 			}
 		}
+	Weapons = {
+		"Cannon": {
+			"image": None,
+			"mass": 100,
+			"AI": None,
+			"fire power": 200000
+			}
+		}
+	Ammo = {
+		"Bullet": {
+			"image": "img/bullet.png",
+			"mass": 10000,
+			"AI": None
+			}
+		}
 	def __init__(self):
 		super(Settings, self).__init__()

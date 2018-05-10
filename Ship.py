@@ -1,14 +1,22 @@
 import kivy
 kivy.require("1.10.0")
+from kivy.app import App
 from kivy.uix.widget import Widget
 from MovableObject import MovableObject
 from kivy.properties import ObjectProperty
 from kivy.vector import Vector
+from Bullet import Bullet
+from Settings import Settings
 class Ship(MovableObject):
 	hp = 0
 	mp = 0
 	xp = 0
-	ammo = 0
+	mass = 1000000 #temporary
+	cooldown = {
+		"Bullet": 0,
+		}
+	selected_ammo = "Bullet"
+	weapon = "Cannon"
 	boost = (0, "type")
 	heat = {
 		#(heat value, overheat(planned), thruster down timer(planned))
@@ -20,6 +28,10 @@ class Ship(MovableObject):
 		}
 	#inventory = Inventory()
 	source = 'img/usership.png'
+	def cooling(self, speed):
+		for cooldown_type in self.cooldown:
+			if self.cooldown[cooldown_type] > 0:
+				self.cooldown[cooldown_type] = round(self.cooldown[cooldown_type] - 0.1, 1)
 	def flight_assist(self):
 		#if must check value higher then norm vect multiply value, to prevent loop
 		if (self.velocity.length() > 0.06):
@@ -60,3 +72,10 @@ class Ship(MovableObject):
 				self.heat[htype][0] -= 0.004
 			else:
 				self.heat[htype][0] = 0
+	def fire(self):
+		if self.cooldown[self.selected_ammo] == 0:
+			bullet = Bullet(self.selected_ammo, self)
+			self.velocity = self.velocity - Vector(1, 0).rotate(self.angle) * Settings.Weapons[self.weapon]["fire power"] / self.mass
+			App.get_running_app().bullets += [bullet]
+			self.parent.add_widget(bullet)
+			self.cooldown["Bullet"] = 1
