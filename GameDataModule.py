@@ -33,7 +33,7 @@ class GameData(IDataSerializer, IDataSaver, IDataLoader):
         if obj in GameData.__objects_list:
             GameData.__objects_list.remove(obj)
         else:
-            raise NoSuchObjectInGameException(obj, "No such object exists in game")
+            raise NoSuchObjectInGameException(GameData.get_objects_list(), obj, "No such object exists in game")
 
     @staticmethod
     def serialize_data():

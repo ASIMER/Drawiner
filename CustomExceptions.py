@@ -1,4 +1,3 @@
-from GameDataModule import GameData
 from GameDataModule import ClassGetter
 from Settings import Settings
 
@@ -13,11 +12,11 @@ class NoSuchObjectInGameError(ValueError):
             print(attr + ":" + value)
         print()
 
-    def __init__(self, specified_object, *args, **kwargs):
+    def __init__(self, objects_list, specified_object, *args, **kwargs):
         print("Specified object " + specified_object + " was not found")
         print("List of the objects in game:")
         print()
-        print(map(NoSuchObjectInGameError.print_object_data, GameData.get_objects_list()))
+        print(map(NoSuchObjectInGameError.print_object_data, objects_list))
         print()
         print("End of the list")
         super().__init__(*args, **kwargs)
