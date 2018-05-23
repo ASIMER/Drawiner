@@ -1,21 +1,10 @@
 from DBProcessor import DBSaver, DBLoader, DBSerializer
 from CustomExceptions import NoSuchObjectInGameError
-from DataProcessingInterfaces import IDataSerializer, IDataSaver, IDataLoader
+from DataProcessingInterfaces import ISerializer, ISaver, ILoader
+from ClassGetter import ClassGetter
 
 
-class ClassGetter:
-
-    @staticmethod
-    def get_class(class_name):
-        class_object = globals()[class_name]
-        return class_object
-
-    @staticmethod
-    def get_class_name(instance):
-        return instance.__class__.__name__
-
-
-class GameData(IDataSerializer, IDataSaver, IDataLoader):
+class GameData(ISerializer, ISaver, ILoader):
 
     __objects_list = []
 
@@ -36,19 +25,19 @@ class GameData(IDataSerializer, IDataSaver, IDataLoader):
             raise NoSuchObjectInGameException(GameData.get_objects_list(), obj, "No such object exists in game")
 
     @staticmethod
-    def serialize_data():
+    def serialize_data(data=None):
         return Serializer.serialize_data(GameData.__objects_list)
 
     @staticmethod
-    def save_data():
-        DBSaver.save_data()
+    def save_data(data=None):
+        DBSaver.save_data(GameData.serialize_data())
 
     @staticmethod
     def load_data():
-        GameData.__objects_list = DBSerializer.deserialize_data(DBLoader.load_data())
+        GameData.__objects_list = DBSerializer.deserialize(DBLoader.load_data())
 
 
-class Serializer(IDataSerializer):
+class Serializer(ISerializer):
 
     # serializes and returns only the attributes those an object's instance does not have
     @staticmethod

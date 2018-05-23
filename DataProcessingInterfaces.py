@@ -1,15 +1,7 @@
 from abc import ABCMeta, abstractmethod
 
 
-class IDataSerializer(metaclass=ABCMeta):
-
-    @staticmethod
-    @abstractmethod
-    def serialize_data(data):
-        pass
-
-
-class IDataSaver(metaclass=ABCMeta):
+class ISaver(metaclass=ABCMeta):
 
     @staticmethod
     @abstractmethod
@@ -17,9 +9,17 @@ class IDataSaver(metaclass=ABCMeta):
         pass
 
 
-class IDataLoader(metaclass=ABCMeta):
+class ILoader(metaclass=ABCMeta):
 
     @staticmethod
     @abstractmethod
-    def load_data(data):
+    def load_data():
+        pass
+
+
+class ISerializer(metaclass=ABCMeta):
+
+    @staticmethod
+    @abstractmethod
+    def serialize_data(data):
         pass

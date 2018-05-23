@@ -1,8 +1,8 @@
 import cx_Oracle
-from DataProcessingInterfaces import IDataSerializer, IDataSaver, IDataLoader
+from DataProcessingInterfaces import ISerializer, ISaver, ILoader
 
 
-class DBSerializer(IDataSerializer):
+class DBSerializer(ISerializer):
 
     # serialized_data_list should be a list of lists like [class_name, [attrs, types, values]]
     @staticmethod
@@ -18,17 +18,17 @@ class DBSerializer(IDataSerializer):
                     raise Exception('Such type of attribute can not be serialized')
 
     @staticmethod
-    def deserialize_data(serialized_data_list):
+    def deserialize(serialized_data_list):
         pass
 
 
-class DBSaver(IDataSaver):
+class DBSaver(ISaver):
 
     # data is the list of lists like [class_name, [attrs, types, values]]
     @staticmethod
     def save_data(data):
 
-        DBSerializer.serialize(data)
+        DBSerializer.serialize_data(data)
         data.sort(key=lambda instance_data: instance_data[0]) # sort by class_name
 
         obj_dict = {}
@@ -50,7 +50,7 @@ class DBSaver(IDataSaver):
     # Vitaliy took 100 grivnas from you
 
 
-class DBLoader(IDataLoader):
+class DBLoader(ILoader):
 
     @staticmethod
     def load_data():

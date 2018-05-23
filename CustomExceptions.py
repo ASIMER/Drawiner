@@ -1,4 +1,4 @@
-from GameDataModule import ClassGetter
+from ClassGetter import ClassGetter
 from Settings import Settings
 
 
