@@ -1,4 +1,5 @@
 import cx_Oracle
+from abc import ABCMeta, abstractmethod, abstractproperty
 
 
 class DBSerializer:
