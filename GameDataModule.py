@@ -1,5 +1,6 @@
-from DBProcessor import DBSaver, DBLoader
+from DBProcessor import DBSaver, DBLoader, DBSerializer
 from CustomExceptions import NoSuchObjectInGameError
+from DataProcessingInterfaces import IDataSerializer, IDataSaver, IDataLoader
 
 
 class ClassGetter:
@@ -14,7 +15,7 @@ class ClassGetter:
         return instance.__class__.__name__
 
 
-class GameData:
+class GameData(IDataSerializer, IDataSaver, IDataLoader):
 
     __objects_list = []
 
@@ -36,20 +37,20 @@ class GameData:
 
     @staticmethod
     def serialize_data():
-        return Serializer.serialize(GameData.__objects_list)
+        return Serializer.serialize_data(GameData.__objects_list)
 
     @staticmethod
     def save_data():
-        DBSaver.save(GameData.serialize_data())
+        DBSaver.save_data()
 
     @staticmethod
     def load_data():
-        GameData.__objects_list = DBLoader.load()
+        GameData.__objects_list = DBSerializer.deserialize_data(DBLoader.load_data())
 
 
-class Serializer:
+class Serializer(IDataSerializer):
 
-    # serializes and returns only the attributes those are inherited in an object's instance
+    # serializes and returns only the attributes those an object's instance does not have
     @staticmethod
     def serialize_attr_dict(attr_dict):
         obj_instance = object()
@@ -65,7 +66,7 @@ class Serializer:
         return [attr_list, types_list, values_list]
 
     @staticmethod
-    def serialize(objects_list):
+    def serialize_data(objects_list):
         data_list = []
         for instance in objects_list:
             instance_data = [ClassGetter.get_class_name(instance), Serializer.serialize_attr_dict(instance.__dict__)]
