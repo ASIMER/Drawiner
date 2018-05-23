@@ -57,7 +57,7 @@ class DrawinerApp(App):
                 self.game.remove_widget(bullet)
                 self.bullets.remove(bullet)
                 del bullet
-        # For trigers:
+        # For triggers:
         if (not (self.settings.keys["Utils"]["FA"][0] in
                      self.keyboard.key_set
                  )

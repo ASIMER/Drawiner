@@ -1,4 +1,5 @@
 from DBProcessor import DBSaver, DBLoader
+from CustomExceptions import NoSuchObjectInGameError
 
 
 class ClassGetter:
@@ -28,7 +29,10 @@ class GameData:
     @staticmethod
     def rem_obj(obj):
         return None
-        GameData.__objects_list.remove(obj)
+        if obj in GameData.__objects_list:
+            GameData.__objects_list.remove(obj)
+        else:
+            raise NoSuchObjectInGameException(obj, "No such object exists in game")
 
     @staticmethod
     def serialize_data():
