@@ -1,0 +1,83 @@
+#:kivy 1.10.0
+#:import MovableObject AbstractObjects.MovableObject
+#:import UserShip UserShip.UserShip
+#:import Vector kivy.vector.Vector
+#:import Window kivy.core.window.Window
+<Game>:
+	skybox_1: skybox_1
+	skybox_2: skybox_2
+	skybox_3: skybox_3
+	skybox_4: skybox_4
+	coords_label: coords_label
+	usership: ship_id
+	MovableObject:
+		coords: Vector(root.width / 2 - self.size[0], root.height / 2 - self.size[1])
+		id: skybox_1
+		source: 'img/skybox.jpg'
+		pos: self.coords.x - ship_id.coords.x, self.coords.y - ship_id.coords.y
+		size: self.texture_size[0], self.texture_size[1]
+	MovableObject:
+		coords: Vector(root.width / 2, root.height / 2 - self.size[1])
+		id: skybox_2
+		source: 'img/skybox.jpg'
+		pos: self.coords.x - ship_id.coords.x, self.coords.y - ship_id.coords.y
+		size: self.texture_size[0], self.texture_size[1]
+	MovableObject:
+		coords: Vector(root.width / 2 - self.size[0], root.height / 2)
+		id: skybox_3
+		source: 'img/skybox.jpg'
+		pos: self.coords.x - ship_id.coords.x, self.coords.y - ship_id.coords.y
+		size: self.texture_size[0], self.texture_size[1]
+	MovableObject:
+		coords: Vector(root.width / 2, root.height / 2)
+		id: skybox_4
+		source: 'img/skybox.jpg'
+		pos: self.coords.x - ship_id.coords.x, self.coords.y - ship_id.coords.y
+		size: self.texture_size[0], self.texture_size[1]
+	Label:
+		id: coords_label
+		font_size: 70
+		top: root.top - 50
+		center_x: root.width / 2
+		text: str(round(ship_id.coords.x, 3)) + "; " + str(round(ship_id.coords.y, 3))
+	UserShip:
+		angle: 0
+		id: ship_id
+		pos: self.parent.center_x - 50, self.parent.center_y - 50
+		canvas.before:
+			PushMatrix
+			Rotate:
+				angle: 90 + self.angle
+				origin: self.center
+		canvas.after:
+			PopMatrix
+		Image:
+			angle: 0
+			id: flare_b
+			source: 'img/flare_b.gif'
+			size: 50, 50
+			pos: self.parent.center_x-40, self.parent.center_y + 5
+			canvas.before:
+				Rotate:
+					angle: self.angle
+					origin: self.center
+		Image:
+			angle: 0
+			id: flare_b
+			source: 'img/flare_b.gif'
+			size: 50, 50
+			pos: self.parent.center_x-10, self.parent.center_y + 5
+			canvas.before:
+				Rotate:
+					angle: self.angle
+					origin: self.center
+<Bullet>:
+	size: self.texture_size[0]*0.2, self.texture_size[1]*0.2
+	pos: Window.width/2 + self.coords.x - self.size[0]/2 - self.shooter.coords.x, Window.height/2 + self.coords.y - self.size[1]/2 - self.shooter.coords.y
+	canvas.before:
+		PushMatrix
+		Rotate:
+			angle: self.angle
+			origin: self.center
+	canvas.after:
+		PopMatrix
