@@ -1,6 +1,6 @@
 #:kivy 1.10.0
-#:import MovableObject MovableObject.MovableObject
-#:import Ship Ship.Ship
+#:import MovableObject AbstractObjects.MovableObject
+#:import UserShip UserShip.UserShip
 #:import Vector kivy.vector.Vector
 #:import Window kivy.core.window.Window
 <Game>:
@@ -9,7 +9,7 @@
 	skybox_3: skybox_3
 	skybox_4: skybox_4
 	coords_label: coords_label
-	ship: ship_id
+	usership: ship_id
 	MovableObject:
 		coords: Vector(root.width / 2 - self.size[0], root.height / 2 - self.size[1])
 		id: skybox_1
@@ -40,7 +40,7 @@
 		top: root.top - 50
 		center_x: root.width / 2
 		text: str(round(ship_id.coords.x, 3)) + "; " + str(round(ship_id.coords.y, 3))
-	Ship:
+	UserShip:
 		angle: 0
 		id: ship_id
 		pos: self.parent.center_x - 50, self.parent.center_y - 50
@@ -56,7 +56,7 @@
 			id: flare_b
 			source: 'img/flare_b.gif'
 			size: 50, 50
-			pos: self.parent.center_x-40, self.parent.center_y + 25
+			pos: self.parent.center_x-40, self.parent.center_y + 5
 			canvas.before:
 				Rotate:
 					angle: self.angle
@@ -66,7 +66,7 @@
 			id: flare_b
 			source: 'img/flare_b.gif'
 			size: 50, 50
-			pos: self.parent.center_x-10, self.parent.center_y + 25
+			pos: self.parent.center_x-10, self.parent.center_y + 5
 			canvas.before:
 				Rotate:
 					angle: self.angle
