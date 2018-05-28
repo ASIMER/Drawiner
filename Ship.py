@@ -7,8 +7,11 @@ from Bullet import Bullet
 
 class Ship(DestructableObject):
 
-    def __init__(self, ammo=200, *args, **kwargs):
+    def __init__(self, ammo=200, cooldown=None, selected_ammo="Bullet", weapon="Cannon", *args, **kwargs):
+        self.cooldown = cooldown or {"Bullet": 0}
         self.ammo = ammo
+        self.selected_ammo = selected_ammo
+        self.weapon = weapon
         super().__init__(*args, **kwargs)
 
     def cooling(self, speed):
@@ -29,33 +32,6 @@ class Ship(DestructableObject):
         self.heat[heat_type][0] += 0.006
         if self.heat[heat_type][0] >= 1:
             self.heat[heat_type][0] = 1
-
-    def thrust(self, direction):
-
-        if self.velocity.length() > self.max_speed:
-            self.velocity = self.velocity.normalize()*self.max_speed
-            return
-
-        if direction == "forward_t":
-            self.velocity = (self.velocity
-                             + Vector(0.1, 0).rotate(self.angle)
-                             * self.heat[direction][0])
-            self.overheat(direction)
-        elif direction == "backward_t":
-            self.velocity = (self.velocity
-                             + Vector(0.05, 0).rotate(self.angle + 180)
-                             * self.heat[direction][0])
-            self.overheat(direction)
-        elif direction == "left_t":
-            self.velocity = (self.velocity
-                             + Vector(0.03, 0).rotate(self.angle + 90)
-                             * self.heat[direction][0])
-            self.overheat(direction)
-        elif direction == "right_t":
-            self.velocity = (self.velocity
-                             + Vector(0.03, 0).rotate(self.angle + 270)
-                             * self.heat[direction][0])
-            self.overheat(direction)
 
     def move(self):
         self.coords = self.coords + self.velocity

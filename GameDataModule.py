@@ -18,11 +18,10 @@ class GameData(ISerializer, ISaver, ILoader):
 
     @staticmethod
     def rem_obj(obj):
-        return None
         if obj in GameData.__objects_list:
             GameData.__objects_list.remove(obj)
         else:
-            raise NoSuchObjectInGameException(GameData.get_objects_list(), obj, "No such object exists in game")
+            raise NoSuchObjectInGameError(GameData.get_objects_list(), obj, "No such object exists in game")
 
     @staticmethod
     def serialize_data(data=None):

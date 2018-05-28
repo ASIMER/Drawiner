@@ -1,5 +1,6 @@
 from AbstractObjects import MovableObject
 from Settings import Settings
+from CustomExceptions import NoSuchPickableObjectTypeException
 
 
 class PickableObject(MovableObject):
@@ -22,5 +23,5 @@ class PickableObject(MovableObject):
         elif self.potype == 'PlushTrap':
             pass  # screamer
         else:
-            raise Exception("No such type of bonus/trap exists")
+            raise NoSuchPickableObjectTypeException(self.potype, "No such type of bonus/trap exists")
         del self

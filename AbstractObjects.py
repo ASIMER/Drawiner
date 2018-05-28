@@ -10,7 +10,7 @@ class MovableObject(Image):
     coords = ObjectProperty(Vector(0, 0), True)
     velocity = ObjectProperty(Vector(0, 0), True)
 
-    def __init__(self, instance=None, mass=1000, max_speed=0, boost=1, max_boost=10, *args, **kwargs):
+    def __init__(self, instance=None, mass=1000, max_speed=1, boost=1, max_boost=10, *args, **kwargs):
         self.max_speed = max_speed
         self.boost = boost
         self.max_boost = max_boost

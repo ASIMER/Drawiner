@@ -31,15 +31,15 @@ class DrawinerApp(App):
                                 Vector(Window.width / 2, Window.height / 2)
                                 ).angle(Vector(1, 0))
         for key in (self.keyboard.key_set | self.mouse.key_set):
-            if (key in self.settings.keys["Move"]["move_up"]):
+            if key in self.settings.keys["Move"]["move_up"]:
                 self.game.usership.thrust("forward_t")
-            elif (key in self.settings.keys["Move"]["move_down"]):
+            elif key in self.settings.keys["Move"]["move_down"]:
                 self.game.usership.thrust("backward_t")
-            elif (key in self.settings.keys["Move"]["move_left"]):
+            elif key in self.settings.keys["Move"]["move_left"]:
                 self.game.usership.thrust("left_t")
-            elif (key in self.settings.keys["Move"]["move_right"]):
+            elif key in self.settings.keys["Move"]["move_right"]:
                 self.game.usership.thrust("right_t")
-            elif (key in self.settings.keys["Combat"]["fire"]):
+            elif key in self.settings.keys["Combat"]["fire"]:
                 # latter there will be bullet type
                 self.game.usership.fire()
             elif (key in self.settings.keys["Utils"]["FA"] and
@@ -61,12 +61,12 @@ class DrawinerApp(App):
         if not self.settings.keys["Utils"]["FA"][0] in self.keyboard.key_set:
             self.settings.keys["Utils"]["FA"][1] = False
         # ------------
-        if (self.settings.FA and len(self.keyboard.key_set) == 0):
+        if self.settings.FA and len(self.keyboard.key_set) == 0:
             self.game.usership.flight_assist()
-        if (len(self.keyboard.del_key_set) != 0):
+        if len(self.keyboard.del_key_set) != 0:
             self.keyboard.key_set -= self.keyboard.del_key_set
             self.keyboard.del_key_set.clear()
-        if (len(self.mouse.del_key_set) != 0):
+        if len(self.mouse.del_key_set) != 0:
             self.mouse.key_set -= self.mouse.del_key_set
             self.mouse.del_key_set.clear()
 
