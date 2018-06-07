@@ -9,10 +9,17 @@ from Keyboard import Keyboard
 from Mouse import Mouse
 from Canvas import Game
 from Settings import Settings
+from Asteroid import Asteroid
+from AI import AI
+from random import randint
+from functools import partial
+from pprint import pprint
+
 
 
 class DrawinerApp(App):
     bullets = []
+    asteroids = []
 
     def build(self):
         self.game = Game()
@@ -20,7 +27,13 @@ class DrawinerApp(App):
         self.mouse = Mouse()
         self.settings = Settings()
         # Create loop with 1/60 sec delay
+        for i in range(0, 200):
+            self.asteroids.append(Asteroid(parent=self.game, user=self.game.usership,
+                                           coords=Vector(randint(-5000, 5000), randint(-5000, 5000))))
+            self.game.add_widget(self.asteroids[i])
         Clock.schedule_interval(self.update, 1.0 / 60.0)
+        AI1 = AI(user=self.game.usership)
+        self.game.add_widget(AI1)
         return self.game
 
     def update(self, dt):
@@ -30,6 +43,10 @@ class DrawinerApp(App):
         self.game.usership.angle = (Vector(Window.mouse_pos) -
                                 Vector(Window.width / 2, Window.height / 2)
                                 ).angle(Vector(1, 0))
+        '''
+        for asteroid in self.asteroids:
+            asteroid.check_distance()
+        '''
         for key in (self.keyboard.key_set | self.mouse.key_set):
             if key in self.settings.keys["Move"]["move_up"]:
                 self.game.usership.thrust("forward_t")
@@ -53,10 +70,30 @@ class DrawinerApp(App):
                     print("Flight assist disabled")
         for bullet in self.bullets:
             bullet.move()
+            widgets = []
+            for widget in self.game.children:
+                if (widget == self.game.skybox_1 or
+                    widget == self.game.skybox_2 or
+                    widget == self.game.skybox_3 or
+                    widget == self.game.skybox_4 or
+                    widget == bullet):
+                    continue
+                widgets.append(widget)
+            for widget in widgets:
+                if bullet.collide_widget(widget):
+                    if widget in self.asteroids:
+                        self.bullets.remove(bullet)
+                        widget.source = "img/collapse.gif"
+                        self.destroy(bullet)
+                        Clock.schedule_once(partial(self.destroy, widget), 1.5)
+                        Clock.schedule_once(lambda dt: partial(self.asteroids.remove, widget), 1.5)
+
             if (bullet.coords - self.game.usership.coords).length() > Window.height * 2:
-                self.game.remove_widget(bullet)
-                self.bullets.remove(bullet)
-                del bullet
+                try:
+                    self.bullets.remove(bullet)
+                    self.destroy(bullet)
+                except ValueError:
+                    pass
         # For triggers:
         if not self.settings.keys["Utils"]["FA"][0] in self.keyboard.key_set:
             self.settings.keys["Utils"]["FA"][1] = False
@@ -69,6 +106,11 @@ class DrawinerApp(App):
         if len(self.mouse.del_key_set) != 0:
             self.mouse.key_set -= self.mouse.del_key_set
             self.mouse.del_key_set.clear()
-
-
+    def destroy(self, obj, dt = 0):
+        try:
+            obj.parent.remove_widget(obj)
+        except AttributeError:
+            pass
+        else:
+            del obj
 DrawinerApp().run()

@@ -1,6 +1,8 @@
 #:kivy 1.10.0
 #:import MovableObject AbstractObjects.MovableObject
 #:import UserShip UserShip.UserShip
+#:import Asteroid Asteroid.Asteroid
+#:import AI AI.AI
 #:import Vector kivy.vector.Vector
 #:import Window kivy.core.window.Window
 <Game>:
@@ -81,3 +83,7 @@
 			origin: self.center
 	canvas.after:
 		PopMatrix
+<AI>:
+    pos: Window.width/2 - self.coords.x - self.user.coords.x, Window.height/2 - self.coords.y - self.user.coords.y
+<Asteroid>:
+    pos: Window.width/2 - self.coords.x - self.user.coords.x, Window.height/2 - self.coords.y - self.user.coords.y
