@@ -13,26 +13,32 @@ from Asteroid import Asteroid
 from AI import AI
 from random import randint
 from functools import partial
+from Creators import CreateKeyboard, CreateMouse
 from pprint import pprint
-
 
 
 class DrawinerApp(App):
     bullets = []
     asteroids = []
+    bots = []
 
     def build(self):
         self.game = Game()
-        self.keyboard = Keyboard()
-        self.mouse = Mouse()
+        self.keyboard = CreateKeyboard()
+        self.keyboard.set_type()
+        self.keyboard.binding()
+        self.mouse = CreateMouse()
+        self.mouse.set_type()
+        self.mouse.binding()
         self.settings = Settings()
         # Create loop with 1/60 sec delay
         for i in range(0, 200):
             self.asteroids.append(Asteroid(parent=self.game, user=self.game.usership,
                                            coords=Vector(randint(-5000, 5000), randint(-5000, 5000))))
             self.game.add_widget(self.asteroids[i])
-        Clock.schedule_interval(self.update, 1.0 / 60.0)
+        Clock.schedule_interval(self.update, 1.0 / 30.0)
         AI1 = AI(user=self.game.usership)
+        self.bots.append(AI1)
         self.game.add_widget(AI1)
         return self.game
 
@@ -50,6 +56,8 @@ class DrawinerApp(App):
         for key in (self.keyboard.key_set | self.mouse.key_set):
             if key in self.settings.keys["Move"]["move_up"]:
                 self.game.usership.thrust("forward_t")
+                for i in self.game.usership.children:
+                    i.color = [1, 1, 1, 1]
             elif key in self.settings.keys["Move"]["move_down"]:
                 self.game.usership.thrust("backward_t")
             elif key in self.settings.keys["Move"]["move_left"]:
@@ -87,6 +95,12 @@ class DrawinerApp(App):
                         self.destroy(bullet)
                         Clock.schedule_once(partial(self.destroy, widget), 1.5)
                         Clock.schedule_once(lambda dt: partial(self.asteroids.remove, widget), 1.5)
+                    elif widget in self.bots:
+                        self.bullets.remove(bullet)
+                        widget.source = "img/collapse.gif"
+                        self.destroy(bullet)
+                        Clock.schedule_once(partial(self.destroy, widget), 1.5)
+                        Clock.schedule_once(lambda dt: partial(self.bots.remove, widget), 1.5)
 
             if (bullet.coords - self.game.usership.coords).length() > Window.height * 2:
                 try:

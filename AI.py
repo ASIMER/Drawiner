@@ -1,5 +1,6 @@
 from Ship import Ship
 from kivy.vector import Vector
+from abc import ABCMeta, abstractmethod
 
 
 class AI(Ship):
@@ -18,10 +19,10 @@ class AI(Ship):
         "weapon_1": [0, 0, 0]
     }
 
-    source = 'img/usership.png'
 
     def __init__(self, user, *args, **kwargs):
         self.user = user
+        self.source = 'img/usership.png'
         super().__init__(*args, **kwargs)
     def thrust(self, direction):
 

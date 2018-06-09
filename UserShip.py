@@ -18,7 +18,6 @@ class UserShip(Ship, Singleton):
         "right_t": [0, 0, 0],
         "weapon_1": [0, 0, 0]
     }
-
     source = 'img/usership.png'
 
     def thrust(self, direction):

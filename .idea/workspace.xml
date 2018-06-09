@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ce43128f-74e5-4ab0-9309-9fcf0a377aa8" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/AsteroidsIterator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/asteroid1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/asteroid2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/asteroid3.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/asteroid4.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/collapse.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/pixel.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/pixel.jpg" afterDir="false" />
+    <list default="true" id="b1f9137f-ad94-4990-9cde-ee4a635b743a" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/Creators.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FactoryManipulator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Manipulator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Drawiner.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Drawiner.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AbstractObjects.py" beforeDir="false" afterPath="$PROJECT_DIR$/AbstractObjects.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AI.py" beforeDir="false" afterPath="$PROJECT_DIR$/AI.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Asteroid.py" beforeDir="false" afterPath="$PROJECT_DIR$/Asteroid.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bullet.py" beforeDir="false" afterPath="$PROJECT_DIR$/Bullet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AsteroidsIterator.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Drawiner.kv" beforeDir="false" afterPath="$PROJECT_DIR$/Drawiner.kv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Keyboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/Keyboard.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mouse.py" beforeDir="false" afterPath="$PROJECT_DIR$/Mouse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserShip.py" beforeDir="false" afterPath="$PROJECT_DIR$/UserShip.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,69 +26,36 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Drawiner$Main.coverage" NAME="Main Coverage Results" MODIFIED="1528334943881" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Drawiner$Main.coverage" NAME="Main Coverage Results" MODIFIED="1528581090480" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
-              <caret line="96" column="23" selection-start-line="96" selection-start-column="23" selection-end-line="96" selection-end-column="23" />
+            <state relative-caret-position="319">
+              <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AsteroidsIterator.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/AsteroidsIterator.py">
+      <file leaf-file-name="Creators.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Creators.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Asteroid.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Asteroid.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
-              <folding>
-                <element signature="e#0#46#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="weakproxy.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.PyCharm2018.1/system/python_stubs/1099968596/kivy/weakproxy.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2311">
-              <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Bullet.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Bullet.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="18" column="56" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="56" />
-              <folding>
-                <element signature="e#0#46#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Keyboard.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Keyboard.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
-              <caret line="1" column="34" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
+            <state relative-caret-position="147">
+              <caret line="6" column="31" lean-forward="true" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FactoryManipulator.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/FactoryManipulator.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="261">
+              <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -96,10 +63,40 @@
       <file leaf-file-name="Mouse.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Mouse.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+            <state relative-caret-position="164">
+              <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Keyboard.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Keyboard.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="builtins.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/.PyCharm2018.1/system/python_stubs/1099968596/builtins.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1148">
+              <caret line="3639" column="8" selection-start-line="3639" selection-start-column="8" selection-end-line="3639" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Asteroid.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Asteroid.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="29">
+              <caret line="1" column="34" lean-forward="true" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#46#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -108,8 +105,8 @@
       <file leaf-file-name="Canvas.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Canvas.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="44" column="17" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="25" />
+            <state relative-caret-position="58">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
               </folding>
@@ -117,51 +114,48 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Ship.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Ship.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-87">
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserShip.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UserShip.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-434">
+              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Python Script" />
-      </list>
-    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>parent</find>
-      <find>GeometryEngine</find>
-      <find>ship_id</find>
-      <find>Ship</find>
+      <find>add_widget</find>
+      <find>lam</find>
+      <find>print(</find>
     </findStrings>
-    <dirStrings>
-      <dir>C:\Users\Administrator\OneDrive\Desktop\Drawiner</dir>
-    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GithubProjectSettings">
-    <option name="CREATE_PULL_REQUEST_DEFAULT_BRANCH" value="master" />
-    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_USER" value="ASIMER" />
-    <option name="CREATE_PULL_REQUEST_DEFAULT_REPO_NAME" value="Drawiner" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Canvas.py" />
-        <option value="$PROJECT_DIR$/AI.py" />
-        <option value="$PROJECT_DIR$/Drawiner.kv" />
-        <option value="$PROJECT_DIR$/AbstractObjects.py" />
-        <option value="$PROJECT_DIR$/Bullet.py" />
-        <option value="$PROJECT_DIR$/Asteroid.py" />
-        <option value="$PROJECT_DIR$/InputCreator.py" />
-        <option value="$PROJECT_DIR$/ManipulatorParam.py" />
-        <option value="$PROJECT_DIR$/Manipulator.py" />
-        <option value="$PROJECT_DIR$/ManipulatorCreator.py" />
-        <option value="$PROJECT_DIR$/Keyboard.py" />
-        <option value="$PROJECT_DIR$/Mouse.py" />
+        <option value="$PROJECT_DIR$/UserShip.py" />
         <option value="$PROJECT_DIR$/Main.py" />
-        <option value="$PROJECT_DIR$/AsteroidsIterator.py" />
+        <option value="$PROJECT_DIR$/Asteroid.py" />
+        <option value="$PROJECT_DIR$/FactoryManipulator.py" />
       </list>
     </option>
   </component>
@@ -174,7 +168,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="481" />
     <option name="y" value="103" />
     <option name="width" value="1400" />
@@ -192,11 +186,6 @@
               <item name="Drawiner" type="b2602c69:ProjectViewProjectNode" />
               <item name="Drawiner" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Drawiner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Drawiner" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -206,15 +195,6 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.templateLanguages.PyTemplateLanguageModulesConfigurable" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Administrator\OneDrive\Desktop\Drawiner\img" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Administrator\OneDrive\Desktop\Drawiner" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -259,38 +239,39 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ce43128f-74e5-4ab0-9309-9fcf0a377aa8" name="Default" comment="" />
-      <created>1528309258623</created>
+      <changelist id="b1f9137f-ad94-4990-9cde-ee4a635b743a" name="Default" comment="" />
+      <created>1528575531166</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1528309258623</updated>
+      <updated>1528575531166</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info anchor="bottom" id="TODO" order="12" />
-      <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.50053304" side_tool="true" visible="true" weight="0.3698324" />
-      <window_info anchor="bottom" id="Database Changes" order="2" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="1" />
-      <window_info anchor="bottom" id="Python Console" order="3" />
-      <window_info anchor="bottom" id="Run" order="8" sideWeight="0.49946696" visible="true" weight="0.3698324" />
-      <window_info anchor="bottom" id="Terminal" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17857143" />
-      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="1" />
-      <window_info anchor="bottom" id="Find" order="7" weight="0.32960895" />
-      <window_info anchor="right" id="SciView" order="0" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="2" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="6" />
-      <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32960895" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="right" id="Database" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.32960895" />
+      <window_info anchor="right" id="SciView" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,64 +280,11 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="1" />
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/UserShip.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-609">
-          <caret selection-end-line="4" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DBProcessor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CustomExceptions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/kivy/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="488" column="8" selection-start-line="488" selection-start-column="8" selection-end-line="488" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/asteroid2.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/asteroid4.gif">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/asteroid3.gif">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/asteroid1.gif">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="21" selection-start-line="21" selection-end-line="24" selection-end-column="41" />
+        <state relative-caret-position="-434">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
@@ -365,87 +293,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Ship.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="50" column="23" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="23" />
+        <state relative-caret-position="-87">
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Drawiner.kv">
+    <entry file="file://$USER_HOME$/.PyCharm2018.1/system/python_stubs/1099968596/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2127">
-          <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
+        <state relative-caret-position="1148">
+          <caret line="3639" column="8" selection-start-line="3639" selection-start-column="8" selection-end-line="3639" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AbstractObjects.py">
+    <entry file="file://$PROJECT_DIR$/Asteroid.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-547">
-          <caret line="12" column="61" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Engines.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Canvas.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="44" column="17" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Manipulator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="6" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ManipulatorCreator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="5" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ManipulatorParam.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="4" column="23" selection-end-line="4" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2018.1/system/python_stubs/1099968596/kivy/weakproxy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2311">
-          <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Bullet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="56" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="56" />
+        <state relative-caret-position="29">
+          <caret line="1" column="34" lean-forward="true" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
           <folding>
             <element signature="e#0#46#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Canvas.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Keyboard.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="1" column="34" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
+        <state relative-caret-position="175">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
@@ -454,35 +339,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Mouse.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        <state relative-caret-position="164">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Creators.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="6" column="31" lean-forward="true" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Asteroid.py">
+    <entry file="file://$PROJECT_DIR$/FactoryManipulator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="96" column="23" selection-start-line="96" selection-start-column="23" selection-end-line="96" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AsteroidsIterator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="261">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
         </state>
       </provider>
     </entry>
